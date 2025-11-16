@@ -1,0 +1,26 @@
+{% load static %} <!-- Обязательно загружаем теги статики -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title> <!-- Заголовок страницы - заголовок статьи -->
+    <!-- Подключаем CSS файл для страницы статьи -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
+<body class="article"> <!-- Уникальный класс для стилизации этой страницы -->
+    <div class="header">
+        <!-- Пример подключения изображения -->
+        <img src="{% static 'img/logo.png' %}" alt="Логотип">
+    </div>
+    <div class="content"> <!-- Контейнер для основного контента -->
+        <h1>{{ post.title }}</h1> <!-- Полный заголовок статьи -->
+        <div class="article-info">
+            <div class="article-author">{{ post.author.username }}</div> <!-- Имя автора -->
+            <div class="article-created-date">{{ post.created_date }}</div> <!-- Дата создания -->
+        </div>
+        <!-- Полный текст статьи. |linebreaks преобразует \n в <br> -->
+        <div class="article-full-text">{{ post.text|linebreaks }}</div>
+        <!-- Ссылка "Все записи", ведущая на главную страницу (архив) -->
+        <a href="{% url 'archive' %}">Все записи</a>
+    </div>
+</body>
+</html>

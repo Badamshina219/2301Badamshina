@@ -1,0 +1,130 @@
+body {
+    background: #1abc9c; /* Цвет фона */
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff; /* Цвет текста */
+}
+
+/* Стили для страницы архива */
+.archive .content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Шапка с логотипом */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1abc9c;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+ф<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <!-- Заголовок сайта -->
+    <div class="site-header">
+        <div class="header-content">
+            <h1>Django public blog</h1>
+        </div>
+        <!-- Ссылка "Все статьи" -->
+        <div class="nav-links">
+            <a href="{% url 'archive' %}">Все статьи</a>
+        </div>
+    </div>
+
+    <!-- Основное содержимое статьи -->
+    <div class="content-wrapper">
+        <div class="post-header">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <div class="post-meta">
+                <span class="author">{{ post.author.username }}</span>
+                <span class="date">{{ post.created_date|date:"d F Y" }}</span> <!-- Формат даты: 19 апреля 2014 -->
+            </div>
+        </div>
+        <div class="post-body">
+            {{ post.text|linebreaksbr }} <!-- Преобразует переносы строк в HTML теги <br> -->
+        </div>
+    </div>
+</body>
+</html>
+.header img {
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+}
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.one-post {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Добавим границу для наглядности */
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+}
+
+.post-title a {
+    color: #ffffff; /* Цвет ссылки заголовка */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.post-title a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.article-info {
+    display: flex;
+    justify-content: space-between; /* Распределяем элементы по краям */
+    margin-bottom: 10px;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+.article-text {
+    font-size: 16px; /* Установим размер шрифта */
+}
+
+/* Стили для страницы отдельной статьи */
+.article .content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article h1 {
+    font-family: "Times New Roman", Times, serif; /* Шрифт с засечками */
+}
+
+.article .article-text {
+    line-height: 1.6; /* Улучшаем читаемость */
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

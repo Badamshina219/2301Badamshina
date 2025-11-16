@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Архив статей</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
+<body class="archive"> <!-- Уникальный класс для стилей этой страницы -->
+    <div class="header">
+        <img src="{% static 'img/logo.png' %}" alt="Logo">
+    </div>
+    <div class="archive-content">
+        {% for post in posts %}
+            <div class="one-post">
+                <!-- Сделаем заголовок ссылкой на страницу статьи -->
+                <h2 class="post-title">
+                    <a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a>
+                </h2>
+                <div class="article-info">
+                    <div class="article-author">{{ post.author.username }}</div>
+                    <div class="article-created-date">{{ post.created_date }}</div>
+                </div>
+                <p class="article-text">{{ post.get_excerpt }}</p>
+            </div>
+        {% empty %}
+            <p>Статей пока нет.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

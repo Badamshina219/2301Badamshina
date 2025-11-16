@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title> <!-- Название статьи как заголовок страницы -->
+    {% load static %} <!-- Загружаем тег static для статических файлов -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
+<body class="article"> <!-- Уникальный класс для стилей этой страницы -->
+    <div class="header">
+        <!-- Пример изображения, замените на путь к вашему логотипу -->
+        <img src="{% static 'img/logo.png' %}" alt="Logo">
+    </div>
+    <div class="content">
+        <h1>{{ post.title }}</h1>
+        <div class="article-info">
+            <div class="article-author">Автор: {{ post.author.username }}</div>
+            <div class="article-created-date">{{ post.created_date }}</div>
+        </div>
+        <p class="article-text">{{ post.text }}</p>
+    </div>
+    <!-- Ссылка "Все записи" -->
+    <div class="back-link">
+        <a href="{% url 'archive' %}">Все записи</a> <!-- archive - имя URL для архива -->
+    </div>
+</body>
+</html>

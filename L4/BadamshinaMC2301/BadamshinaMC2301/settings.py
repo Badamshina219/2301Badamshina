@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w5^mv8f=&=i$d9)e+lhgfge$*$+rhkw0w#9eu&(h2yhg9j#(y1'
+SECRET_KEY = 'django-insecure-cwx&3u2+50cw4p=a5r2$$yg_k=41!4=%0og@m**5@9+_c68dos'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles',  # Добавь эту строку
+    'articles',  # Добавьте эту строку
 ]
 
 MIDDLEWARE = [
@@ -120,6 +120,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), # Если у вас есть общая папка static в корне проекта
     # os.path.join(BASE_DIR, 'articles', 'static'), # Не нужно, т.к. Django ищет в 'static' внутри приложений автоматически
 ]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
