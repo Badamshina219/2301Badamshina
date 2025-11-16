@@ -1,0 +1,38 @@
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif; /* шрифт с засечками */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+p, h4 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: 16px; /* изменён размер шрифта для h4 */
+}
+
+ul, ol {
+    margin: 0;
+}
+
+img {
+    height: 30px;
+    width: auto;
+}
